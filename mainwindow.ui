@@ -50,7 +50,7 @@
      <string>Result</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="employeeaddbtn">
     <property name="geometry">
      <rect>
       <x>90</x>
@@ -63,7 +63,7 @@
      <string>Add</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="employeermbtn">
     <property name="geometry">
      <rect>
       <x>190</x>
@@ -76,7 +76,7 @@
      <string>Remove</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="editemployeebtn">
     <property name="geometry">
      <rect>
       <x>20</x>

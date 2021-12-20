@@ -4,6 +4,7 @@
 #include<iostream>
 #include<ctime>
 #include<cstdlib>
+#include <database.h>
 
 using namespace std;
 
