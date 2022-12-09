@@ -23,6 +23,8 @@ public:
 private slots:
     void on_coinflipbtn_clicked();
 
+    void on_employeeaddbtn_clicked();
+
 private:
     Ui::MainWindow *ui;
     QSqlDatabase db;

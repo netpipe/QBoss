@@ -28,6 +28,10 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    createTable("./test.db");
+    searchEmployee();
+
 }
 
 MainWindow::~MainWindow()
@@ -60,4 +64,59 @@ avgnum++;
         i++;
     }
     ui->label_2->setText(QString::number(avgnum/times));
+
+
+
+    //db.setDatabaseName("test.db");
+    db.open();
+    db.transaction();
+        QSqlQuery query4;
+      //  query4.exec("SELECT origid FROM employee; WHERE ORDER BY RANDOM() LIMIT 1");
+        query4.exec("SELECT * FROM employee ORDER BY random() LIMIT 1");
+     // select.prepare(query);
+        while (query4.next()) {
+         //   yeardb = query.value(0).toInt();
+          //  qDebug() << "employee " << query4.value(1).toString();
+
+            ui->lineEdit->setText(query4.value(1).toString() );
+        //    ui->listWidget->addItem( query4.value(1).toString());
+           // return yeardb.toLatin1();
+        }
+    db.commit();
+    db.close();
+
+
+
 }
+
+void MainWindow::on_employeeaddbtn_clicked()
+{
+   // db = QSqlDatabase::addDatabase("QSQLITE");
+     QVariantList employee;
+
+     employee.append(ui->lineEdit->text());
+
+  //  db.setDatabaseName("test.db");
+    db.open();
+    db.transaction();
+        QSqlQuery query4;
+            QString query2 = "INSERT INTO employee(origid) VALUES (?)";
+        query4.exec(query2);
+        QSqlQuery insert;
+        insert.prepare(query2);
+        insert.addBindValue(employee);
+
+        if(insert.execBatch())
+        {
+            qDebug() << "Coin is properly inserted";
+        }
+        else
+        {
+ //           qDebug()<<"ERROR! "<< insert.lastError();
+        }
+        db.commit();
+       // coins.clear();
+        employee.clear();
+        db.close();
+}
+
