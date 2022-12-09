@@ -25,6 +25,8 @@ private slots:
 
     void on_employeeaddbtn_clicked();
 
+    void on_employeermbtn_clicked();
+
 private:
     Ui::MainWindow *ui;
     QSqlDatabase db;

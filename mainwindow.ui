@@ -35,13 +35,6 @@
       </property>
      </widget>
     </item>
-    <item row="3" column="0">
-     <widget class="QPushButton" name="editemployeebtn">
-      <property name="text">
-       <string>Edit</string>
-      </property>
-     </widget>
-    </item>
     <item row="3" column="1">
      <widget class="QPushButton" name="employeeaddbtn">
       <property name="text">

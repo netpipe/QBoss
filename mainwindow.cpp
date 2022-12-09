@@ -133,3 +133,28 @@ void MainWindow::on_employeeaddbtn_clicked()
         searchEmployee();
 }
 
+
+void MainWindow::on_employeermbtn_clicked()
+{
+  //  DELETE FROM table
+  //  WHERE search_condition;
+
+    QString del_str = QString("DELETE FROM employee WHERE origid = '%1' LIMIT 1;").arg(ui->lineEdit->text());
+
+
+    db.open();
+    db.transaction();
+        QSqlQuery query4;
+            QString query2 = del_str;
+        query4.exec(query2);
+
+
+        db.commit();
+       // coins.clear();
+        //employee.clear();
+        db.close();
+
+        ui->listWidget->clear();
+searchEmployee();
+}
+
