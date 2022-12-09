@@ -63,7 +63,15 @@ avgnum++;
 
         i++;
     }
-    ui->label_2->setText(QString::number(avgnum/times));
+
+    QString resultcoin;
+
+    if ((avgnum/times) >= .5)
+    //	cout << "Heads" << endl;
+        resultcoin += "Saved";
+    else
+        //cout << "Tails" << endl;
+            resultcoin += "Fired";
 
 
 
@@ -77,8 +85,10 @@ avgnum++;
         while (query4.next()) {
          //   yeardb = query.value(0).toInt();
           //  qDebug() << "employee " << query4.value(1).toString();
+            ui->label_2->setText( query4.value(1).toString()+ " "+ QString::number(avgnum/times) + " " + resultcoin.toLatin1());
 
-            ui->lineEdit->setText(query4.value(1).toString() );
+
+        //    ui->lineEdit->setText(query4.value(1).toString() );
         //    ui->listWidget->addItem( query4.value(1).toString());
            // return yeardb.toLatin1();
         }
@@ -118,5 +128,8 @@ void MainWindow::on_employeeaddbtn_clicked()
        // coins.clear();
         employee.clear();
         db.close();
+
+        ui->listWidget->clear();
+        searchEmployee();
 }
 
