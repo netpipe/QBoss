@@ -48,7 +48,7 @@ float avgnum=0;
     int count = 0;
 
     srand(static_cast<size_t>(time(nullptr)));  // <--- Noved and changed.
-
+ui->tosslst->clear();
 
     while (i < times)      //It shows the same answer 'x' times :(
     {
