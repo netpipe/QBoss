@@ -32,7 +32,7 @@ MainWindow::MainWindow(QWidget *parent)
 #ifdef __APPLE__
     createTable("/Applications/QBoss.app/Contents/MacOS/test.db");
 #else
-    createTable("/Applications/QBoss.app/Contents/MacOS/test.db");
+    createTable("test.db");
 #endif
     searchEmployee();
 

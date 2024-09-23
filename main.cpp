@@ -9,9 +9,17 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     MainWindow w;
 
-    QPixmap m("/Applications/QBoss.app/Contents/MacOS/fired.jpg");
+#ifdef __APPLE__
+    QPixmap m("/Applications/QBoss.app/Contents/MacOS/Resource/fired.jpg");
 
-        QFile file("/Applications/QBoss.app/Contents/MacOS/orange.qss");
+        QFile file("/Applications/QBoss.app/Contents/MacOS/Resource/orange.qss");
+#else
+        QPixmap m("./Resource/fired.jpg");
+
+            QFile file("./Resource/orange.qss");
+#endif
+
+
         file.open(QFile::ReadOnly);
         QString styleSheet = QLatin1String(file.readAll());
     w.setStyleSheet(styleSheet);
