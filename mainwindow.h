@@ -2,7 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-
+#include <QMessageBox>
+#include <qlistwidget.h>
 #include <QSqlDatabase>
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -13,7 +14,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 
-
+    bool bLoading;
     void searchEmployee();
 void createTable(QString DBname);
 public:
@@ -26,6 +27,16 @@ private slots:
     void on_employeeaddbtn_clicked();
 
     void on_employeermbtn_clicked();
+
+    void on_actionimport_csv_triggered();
+
+    void on_actionexport_names_triggered();
+
+   // void on_listWidget_currentRowChanged(int currentRow);
+
+    void on_actionclear_names_triggered();
+
+    void on_listWidget_itemClicked(QListWidgetItem *item);
 
 private:
     Ui::MainWindow *ui;

@@ -9,9 +9,9 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     MainWindow w;
 
-    QPixmap m("./Resource/fired.jpg");
+    QPixmap m("/Applications/QBoss.app/Contents/MacOS/fired.jpg");
 
-        QFile file("./Resource/orange.qss");
+        QFile file("/Applications/QBoss.app/Contents/MacOS/orange.qss");
         file.open(QFile::ReadOnly);
         QString styleSheet = QLatin1String(file.readAll());
     w.setStyleSheet(styleSheet);

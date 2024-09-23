@@ -67,17 +67,35 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>31</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuExit">
     <property name="title">
      <string>Exit</string>
     </property>
+    <addaction name="actionimport_csv"/>
+    <addaction name="actionclear_names"/>
+    <addaction name="actionexport_names"/>
    </widget>
    <addaction name="menuExit"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionimport_csv">
+   <property name="text">
+    <string>import csv</string>
+   </property>
+  </action>
+  <action name="actionclear_names">
+   <property name="text">
+    <string>clear-names</string>
+   </property>
+  </action>
+  <action name="actionexport_names">
+   <property name="text">
+    <string>export-names</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
